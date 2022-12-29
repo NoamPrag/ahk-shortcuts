@@ -1,8 +1,10 @@
 isAppOpen(app) {
+    DetectHiddenWindows, On
     return WinExist("ahk_exe " . app)
 }
 
 isWindowActivated(app) {
+    DetectHiddenWindows, On
     return WinActive("ahk_exe " . app)
 }
 

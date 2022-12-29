@@ -17,7 +17,9 @@ PATH_TO_SPOTIFY_EXE := ""
 setPathToSpotify()
 
 applyAction(action, stayInSpotify := false) {
-    if (not isAppOpen(PATH_TO_SPOTIFY_EXE)) {
+    global PATH_TO_SPOTIFY_EXE
+    if (not isAppOpen("Spotify.exe")) {
+        MsgBox, hi
         return
     }
 
