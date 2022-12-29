@@ -11,10 +11,12 @@ SetWorkingDir, %A_ScriptDir%
 activateSpotifyShortcut() {
     Input, inp, L1
 
+    global PATH_TO_SPOTIFY_EXE
+
     Switch inp
     {
     Case "o":
-        openApp("spotify")
+        openApp(PATH_TO_SPOTIFY_EXE)
 
     Case "l":
         applyAction("likeCurrentSong")

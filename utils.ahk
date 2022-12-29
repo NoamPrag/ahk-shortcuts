@@ -1,9 +1,9 @@
 isAppOpen(app) {
-    return WinExist("ahk_exe " . app . ".exe")
+    return WinExist("ahk_exe " . app)
 }
 
 isWindowActivated(app) {
-    return WinActive("ahk_exe " . app . ".exe")
+    return WinActive("ahk_exe " . app)
 }
 
 openApp(app) {
@@ -13,9 +13,19 @@ openApp(app) {
     if isAppOpen(app)
     {
         DetectHiddenWindows, On
-        WinActivate, ahk_exe %app%.exe
+        WinActivate, ahk_exe %app%
         return
     }
 
-    Run, %app%.exe
+    Run, %app%
+}
+
+findPathToExe(paths, appName) {
+    for _, p in paths {
+        if FileExist(p) {
+            return p
+        }
+    }
+    MsgBox % "Can't find" appName 
+    ExitApp, 1
 }
