@@ -14,7 +14,7 @@ activateSpotifyShortcut() {
     Switch inp
     {
     Case "o":
-        openSpotify()
+        openApp("spotify")
 
     Case "l":
         applyAction("likeCurrentSong")
@@ -38,6 +38,5 @@ activateSpotifyShortcut() {
         applyAction("toggleShuffle")
 
     Default:
-        ; return
     }
 }

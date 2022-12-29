@@ -1,20 +1,7 @@
-isSpotifyOpen() {
-    return WinExist("ahk_exe spotify.exe")
-}
-
-openSpotify() {
-    if isSpotifyOpen()
-    {
-        DetectHiddenWindows, On
-        WinActivate, ahk_exe spotify.exe
-        return
-    }
-
-    Run, spotify.exe
-}
+#Include, utils.ahk
 
 applyAction(action, stayInSpotify := false) {
-    if (not isSpotifyOpen()) {
+    if (not isAppOpen("spotify")) {
         return
     }
 
